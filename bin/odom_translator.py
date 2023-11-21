@@ -22,7 +22,7 @@ class Translator:
         self.tf_broadcaster = tf2_ros.TransformBroadcaster()
 
         # Fixed republishing covariance
-        self.covariance = np.eye(6).flatten() * 0.001
+        self.covariance = np.eye(6).flatten() * 0.01
 
     def compslam_callback(self, odometry_msg):
         republish_msg = Odometry()
