@@ -60,6 +60,8 @@ roslint_cpp()
 ###################################
 ## catkin specific configuration ##
 ###################################
+catkin_python_setup()
+
 add_service_files(
   FILES
     GetState.srv
@@ -177,6 +179,10 @@ target_link_libraries(navsat_transform_nodelet navsat_transform ${catkin_LIBRARI
 #############
 ## Install ##
 #############
+
+catkin_install_python(PROGRAMS bin/odom_translator.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark executables and/or libraries for installation
 install(TARGETS
